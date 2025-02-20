@@ -3,7 +3,12 @@
     "name": "Auto Refresh",
     "version": "1.0",
     "description": "Auto refreshes the current tab",
-    "permissions": ["activeTab", "scripting", "storage"],
+    "permissions": [
+      "activeTab", 
+      "scripting", 
+      "storage",
+      "notifications"
+    ],
     "action": {
       "default_title": "Auto Refresh"
     },
