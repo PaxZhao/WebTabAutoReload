@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Refresh",
+    "version": "1.0",
+    "description": "Auto refreshes the current tab",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "action": {
+      "default_title": "Auto Refresh"
+    },
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    }
+  }
