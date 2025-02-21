@@ -52,19 +52,19 @@ chrome.action.onClicked.addListener(async (tab) => {
           if (interval !== null && !isNaN(interval)) {
             const milliseconds = parseInt(interval) * 1000;
             
-            // Store initial count of tasking elements
-            const initialTaskCount = document.getElementsByClassName('tasking').length;
+            // Store initial count of tasking w-16 elements
+            const initialTaskCount = document.getElementsByClassName('w-16').length;
             localStorage.setItem('previousTaskCount', initialTaskCount.toString());
             localStorage.setItem('refreshInterval', milliseconds.toString());
 
             // Function to check for new tasks
             function checkForNewTasks() {
               const previousCount = parseInt(localStorage.getItem('previousTaskCount') || '0');
-              const currentCount = document.getElementsByClassName('tasking').length;
+              const currentCount = document.getElementsByClassName('w-16').length;
               
               if (currentCount > previousCount) {
                 // Return information about new tasks
-                const newTasks = Array.from(document.getElementsByClassName('tasking'))
+                const newTasks = Array.from(document.getElementsByClassName('w-16'))
                   .slice(previousCount)
                   .map(el => el.textContent.trim());
                 
@@ -133,10 +133,10 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
             // Restore task checking functionality
             function checkForNewTasks() {
               const previousCount = parseInt(localStorage.getItem('previousTaskCount') || '0');
-              const currentCount = document.getElementsByClassName('tasking').length;
+              const currentCount = document.getElementsByClassName('w-16').length;
               
               if (currentCount > previousCount) {
-                const newTasks = Array.from(document.getElementsByClassName('tasking'))
+                const newTasks = Array.from(document.getElementsByClassName('w-16'))
                   .slice(previousCount)
                   .map(el => el.textContent.trim());
                 
